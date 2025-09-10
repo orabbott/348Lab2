@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Color changer!</h1>
+    <p id = "paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt <br>
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br>
+        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br>
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt <br>
+        mollit anim id est laborum.</p>
+        <input type="text" id="input1" value="">
+        <button id = "button1" onclick = "setColor()">Enter an RGB value separated by spaces (EX: "255 0 0")</button>
+    <a href = "./index.html">Return to main page</a>
+    <script>
+        function setColor() {
+            const input = document.getElementById("input1").value; 
+            var rbg = input.split(" ");
+            document.getElementById("paragraph").style.color = "rgb(" + rbg[0] + "," + rbg[1] + "," + rbg[2] + ")";
+        }
+    </script>
+</body>
+</html>
