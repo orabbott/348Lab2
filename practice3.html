@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background: linear-gradient(to right, #f8f9fa, #810a0a); 
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create a password:</h1>
+    <input type = "password" id = "box1", value = '', onkeydown = "check()">
+    <br>
+    <p>Re-Enter password:</p>
+    <input type = "password" id = "box2" value = '', onkeydown="check()">
+    <h2 id = "place"></h2>
+    <script>
+        function check() {
+            if (event.code == 'Enter') {
+                const value1 = document.getElementById('box1').value
+                const value2 = document.getElementById('box2').value
+                if (value1 == value2 && value1.length >= 8) {
+                    document.getElementById('place').innerHTML = "Password validated."
+                }
+                else if (value1 != value2) {
+                    document.getElementById('place').innerHTML = "Passwords do not match."
+                }
+                else {
+                    document.getElementById('place').innerHTML = "Invalid password length. (Min 8 characters)"
+                }
+            }
+        }
+    </script>
+    <a href = "./index.html">Return to main page</a>
+</body>
+</html>

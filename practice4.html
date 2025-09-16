@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #f8f9fa, #810a0a); 
+        }
+        p {
+            color: #810a0a;
+        }
+        img {
+            width:200px;
+            height:200px;
+        }
+        * {
+            line-height: 2;
+            margin-right: 50;
+            font-size: 25;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Create a multiplication table from 1 to given value
+    </h2>
+    <form action="practice4.php" method="POST" id="myForm">
+        <input type="text" name="jsValue" id="jsValueInput">
+        <button type="submit" onclick="sendValue()">Send Value</button>
+    </form>
+    <script>
+        function sendValue() {
+        document.getElementById('myForm').submit();
+    }
+    </script>
+    <a href = "./index.html">Return to main page</a>
+</body>
+</html>

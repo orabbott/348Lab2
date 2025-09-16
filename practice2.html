@@ -4,24 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #f8f9fa, #810a0a); 
+        }
+        p {
+            color: #810a0a;
+        }
+        img {
+            width:200px;
+            height:200px;
+        }
+        * {
+            line-height: 2;
+            margin-right: 50;
+            font-size: 25;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bordered-box {
+            border: 2px solid #000000; /* Sets border width, style, and color */
+            padding: 10px;            
+            border-radius: 8px;       
+        }
+    </style>
 </head>
 <body>
-    <h1>Color changer!</h1>
-    <p id = "paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt <br>
+    <h1>Paragraph changer!</h1>
+    <p id = "paragraph", class = "bordered-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt <br>
         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation <br>
         ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <br>
         reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br>
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt <br>
-        mollit anim id est laborum.</p>
-        <input type="text" id="input1" value="">
-        <button id = "button1" onclick = "setColor()">Enter an RGB value separated by spaces (EX: "255 0 0")</button>
+        mollit anim id est laborum.
+    </p> 
+    <h2>Border color:</h2>
+    <h4>Enter an RGB value separated by spaces (EX: "255 0 0")</h4>
+    <input type="text" id="input1" value="">
+    <br>
+    <h2>Border width:</h2>
+    <input type="text" id="input2" value="">
+    <br>
+    <h2>Background color:</h2>
+    <h4>Enter an RGB value separated by spaces (EX: "255 0 0")</h4>
+    <input type="text" id="input3" value="">
+    <button id = "button1" onclick = "setBackground(); setColor(); setWidth()">Modify paragraph</button>
+    <br>
     <a href = "./index.html">Return to main page</a>
     <script>
         function setColor() {
             const input = document.getElementById("input1").value; 
             var rbg = input.split(" ");
-            document.getElementById("paragraph").style.color = "rgb(" + rbg[0] + "," + rbg[1] + "," + rbg[2] + ")";
+            document.getElementById("paragraph").style.borderColor = "rgb(" + rbg[0] + "," + rbg[1] + "," + rbg[2] + ")";
         }
+        function setWidth() {
+            const input = document.getElementById("input2").value;
+            document.getElementById("paragraph").style.borderWidth = input + "px";
+        }
+        function setBackground() {
+            const input = document.getElementById("input3").value; 
+            var rbg = input.split(" ");
+            document.getElementById("paragraph").style.backgroundColor = "rgb(" + rbg[0] + "," + rbg[1] + "," + rbg[2] + ")";
+        }
+
     </script>
 </body>
 </html>
